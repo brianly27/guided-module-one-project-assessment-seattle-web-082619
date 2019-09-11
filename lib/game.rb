@@ -27,9 +27,8 @@
                     input_2 = STDIN.gets.chomp.to_i
                     if input_2 == 1
                         user.rename_pokemon
-
                     elsif input_2 == 2
-                        
+                        user.release_pokemon
                     elsif input_2 == 3
                         
                     elsif input_2 == 4

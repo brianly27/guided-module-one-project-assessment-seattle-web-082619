@@ -47,13 +47,31 @@ class User < ActiveRecord::Base
     end 
     
     def release_pokemon
-
+        releasing = true
+        while releasing == true
+            puts "Which pokemon would you like to release?"
+            puts "Type in it's position in the roster and press enter"
+            self.view_roster
+            puts "#{self.select_roster.length+1}. Go back."
+            release_input = STDIN.gets.chomp.to_i
+            if release_input.between?(1,(self.select_roster.length))
+                puts "Say goodbye to your #{self.select_roster[release_input-1].pokemon.name}."
+                puts
+                goodbye = STDIN.gets.chomp
+                self.release_companion(release_input, goodbye)
+            elsif release_input == (self.select_roster.length + 1)
+                releasing = false
+            else
+                puts "Try again"
+            end
+        end
     end
 
     def release_companion(release_input, message)
-
+        release_pokemon = self.select_roster[release_input-1]
+        self.select_roster.destroy(self.select_roster[release_input-1])
     end
-    
+
 
 
 end
