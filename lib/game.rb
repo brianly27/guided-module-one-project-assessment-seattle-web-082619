@@ -14,18 +14,38 @@
             puts "3. Exit"
             puts
             input = STDIN.gets.chomp.to_i
-            #display options: 1) view roster, 2) catch pokemon, 3) exit
             if input == 1
+                puts "Here are all your pokemon"
                 user.view_roster
+                interacting_with_pokemon = true
+                while interacting_with_pokemon == true
+                    puts "What would you like to do?" 
+                    puts "1. Rename pokemon"
+                    puts "2. Release pokemon"
+                    puts "3. Workout with pokemon"
+                    puts "4. Go back"
+                    input_2 = STDIN.gets.chomp.to_i
+                    if input_2 == 1
+                        user.rename_pokemon
+
+                    elsif input_2 == 2
+                        
+                    elsif input_2 == 3
+                        
+                    elsif input_2 == 4
+                        interacting_with_pokemon = false 
+                    else 
+                        puts "Try again."
+                    end
+                end
             elsif input == 2
                 pokemon = user.encounter_random_pokemon
                 puts "A wild #{pokemon.name} appeared!"
 
-                
                 user.capture_pokemon(pokemon)
                 puts "Congratulations! You have caught #{pokemon.name}"
                 puts "#{pokemon.name} has been added to your roster."
-                user.pokemons << pokemon
+                
 
             elsif input == 3
                 is_running = false
@@ -33,11 +53,6 @@
             else
                 puts "Try again"
             end
-            #input = gets.chomp
-            #if 1, view roster
-            #if 2, catch pokemon
-            #if 3, is_running = false, puts "goodbye"
-            #else, try again
         end
     end
 
@@ -46,6 +61,16 @@
     end
 
 
+# tomorrow's goals:
+# release pokemon
+# delete user?
+# throw pokeball with 50% catch rate
+# pokemon attempts to run after every turn with 25% success rate
+
+# then:
+# pokemon are able to attack
+# being hit by an attack ends the battle
+# the defending pokemon can attempt to dodge with 50% chance of success
 
 
 
