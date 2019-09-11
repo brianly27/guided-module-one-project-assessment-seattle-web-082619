@@ -23,7 +23,6 @@ class PokemonAPI
         @@all 
     end
 
-
     def self.count
         @pokemon_api = "https://pokeapi.co/api/v2/pokemon/"
         response_string = RestClient.get(@pokemon_api)

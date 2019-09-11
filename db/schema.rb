@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_09_09_223803) do
 
-  create_table "pokemons", force: :cascade do |t|
-    t.string "name"
-    t.integer "pokemon_number"
-  end
-
-  create_table "user_pokemons", force: :cascade do |t|
+  create_table "companions", force: :cascade do |t|
     t.string "nickname"
     t.integer "user_id"
     t.integer "pokemon_id"
+  end
+
+  create_table "pokemons", force: :cascade do |t|
+    t.string "name"
+    t.integer "pokemon_number"
   end
 
   create_table "users", force: :cascade do |t|
