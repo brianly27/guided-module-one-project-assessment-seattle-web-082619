@@ -1,14 +1,15 @@
-
-
+class Game
     def run
+        Game.loading_screen
         puts `clear`
+        Game.banner 
         puts "Welcome to the game"
         puts "What is your name?"
         user_name = STDIN.gets.chomp
         user = sign_or_log_in(user_name)
         puts `clear`
+        Game.banner
         puts "Welcome #{user_name}! What would you like to do?"
-
         is_running = true
         while is_running == true
             puts "1. View roster"
@@ -17,11 +18,13 @@
             input = STDIN.gets.chomp.to_i
             if input == 1
                 puts `clear`
+                Game.banner
                 puts "Here are all your pokemon:"
                 user.view_roster
                 interacting_with_pokemon = true
                 while interacting_with_pokemon == true
-                    puts 
+                    puts `clear`
+                    Game.banner
                     puts "What would you like to do?" 
                     puts "1. Rename pokemon"
                     puts "2. Release pokemon"
@@ -37,25 +40,30 @@
                     elsif input_2 == 4
                         interacting_with_pokemon = false 
                         puts `clear`
+                        Game.banner
                     else 
                         puts "Try again."
                     end
                 end
             elsif input == 2
+                puts `clear`
+                Game.banner
                 random_pokemon = user.encounter_random_pokemon
                 puts "A wild #{random_pokemon.name} appeared!"
-
                 user.capture_pokemon(random_pokemon)
                 puts "Congratulations! You have caught #{random_pokemon.name}"
                 puts "#{random_pokemon.name} has been added to your roster."
                 
-
             elsif input == 3
                 is_running = false
                 puts `clear`
-                puts "Thanks for playing!"
+                Game.banner
+                Game.loading_screen
+                puts "Thanks for playing #{user_name}!"
+                5.times {puts}
             else
                 puts `clear`
+                Game.banner
                 puts "Try again"
             end
         end
@@ -65,7 +73,41 @@
         User.all.find_or_create_by(name: user_name)
     end
 
+    def self.banner
+        logo = File.open("./lib/ascii/pokemon_logo.txt")
+        puts logo.read
+        logo.close
+    end
 
+    def self.loading_screen
+        3.times do |dance|
+            puts `clear`
+            Game.banner
+            Game.dance_left
+            sleep 1
+            puts `clear`
+            Game.banner
+            Game.dance_right 
+            sleep 1
+        end
+    end
+
+    def self.dance_right
+        pika_right = File.open("./lib/ascii/pikachu_right.txt")
+        puts pika_right.read
+        pika_right.close
+    end
+
+    def self.dance_left
+        pika_left = File.open("./lib/ascii/pikachu_left.txt")
+        puts pika_left.read
+        pika_left.close
+    end
+
+    def self.clear_and_banner
+        
+    end
+end
 # tomorrow's goals:
 # release pokemon
 # delete user?

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
 
     def view_roster
+        puts `clear`
+        Game.banner
         select_roster.map.with_index do |relationship, i|
             puts "#{i+1}. Pokemon: #{relationship.pokemon.name},   Nickname: #{relationship.nickname}"
         end
@@ -23,14 +25,17 @@ class User < ActiveRecord::Base
     
     def rename_pokemon
         renaming = true  
-        while renaming == true 
-            puts `clear`
+        while renaming == true
             puts "Which pokemon would you like to give a nickname to?"
             puts "Type in it's position in the roster and press enter"
+            puts
             self.view_roster
             puts "#{self.select_roster.length+1}. Go back."
+
             rename_input = STDIN.gets.chomp.to_i
             if rename_input.between?(1,(self.select_roster.length))
+                puts `clear`
+                Game.banner
                 puts "What should #{self.select_roster[rename_input-1].pokemon.name}'s name be?"
                 name_input = STDIN.gets.chomp
                 self.rename_companion(rename_input, name_input)
@@ -52,13 +57,16 @@ class User < ActiveRecord::Base
         releasing = true
         while releasing == true
             puts `clear`
+            Game.banner
             puts "Which pokemon would you like to release?"
             puts "Type in it's position in the roster and press enter"
+            puts 
             self.view_roster
             puts "#{self.select_roster.length+1}. Go back."
             release_input = STDIN.gets.chomp.to_i
             if release_input.between?(1,(self.select_roster.length))
                 puts `clear`
+                Game.banner
                 puts "Say goodbye to your #{self.select_roster[release_input-1].pokemon.name}."
                 goodbye = STDIN.gets.chomp
                 self.release_companion(release_input)
@@ -77,6 +85,8 @@ class User < ActiveRecord::Base
         self.select_roster.destroy(self.select_roster[release_input-1])
     end
     def release_message(message)
+        puts `clear`
+        Game.banner
         puts "You say to your pokemon: #{message}"
         puts "You release #{@release_pokemon.pokemon.name} into the wild."
         puts "Press any key to continue.."
