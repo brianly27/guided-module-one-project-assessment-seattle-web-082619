@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     end
 
     def encounter_random_pokemon
-        Pokemon.all.find_by(pokemon_number: rand(1..5))
+        Pokemon.all.find_by(pokemon_number: rand(1..(Pokemon.all.count)))
     end
 
     def capture_pokemon(pokemon)
@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
     def rename_pokemon
         renaming = true  
         while renaming == true 
+            puts `clear`
             puts "Which pokemon would you like to give a nickname to?"
             puts "Type in it's position in the roster and press enter"
             self.view_roster
@@ -34,6 +35,7 @@ class User < ActiveRecord::Base
                 name_input = STDIN.gets.chomp
                 self.rename_companion(rename_input, name_input)
             elsif rename_input == (self.select_roster.length + 1)
+                puts `clear`
                 renaming = false
             else 
                 puts "Try again"
@@ -49,17 +51,20 @@ class User < ActiveRecord::Base
     def release_pokemon
         releasing = true
         while releasing == true
+            puts `clear`
             puts "Which pokemon would you like to release?"
             puts "Type in it's position in the roster and press enter"
             self.view_roster
             puts "#{self.select_roster.length+1}. Go back."
             release_input = STDIN.gets.chomp.to_i
             if release_input.between?(1,(self.select_roster.length))
+                puts `clear`
                 puts "Say goodbye to your #{self.select_roster[release_input-1].pokemon.name}."
-                puts
                 goodbye = STDIN.gets.chomp
-                self.release_companion(release_input, goodbye)
+                self.release_companion(release_input)
+                self.release_message(goodbye)
             elsif release_input == (self.select_roster.length + 1)
+                puts `clear`
                 releasing = false
             else
                 puts "Try again"
@@ -67,11 +72,17 @@ class User < ActiveRecord::Base
         end
     end
 
-    def release_companion(release_input, message)
-        release_pokemon = self.select_roster[release_input-1]
+    def release_companion(release_input)
+        @release_pokemon = self.select_roster[release_input-1]
         self.select_roster.destroy(self.select_roster[release_input-1])
     end
-
+    def release_message(message)
+        puts "You say to your pokemon: #{message}"
+        puts "You release #{@release_pokemon.pokemon.name} into the wild."
+        puts "Press any key to continue.."
+        STDIN.getc
+        puts "                                                   \r"
+    end
 
 
 end

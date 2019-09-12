@@ -1,10 +1,12 @@
 
 
     def run
+        puts `clear`
         puts "Welcome to the game"
         puts "What is your name?"
         user_name = STDIN.gets.chomp
         user = sign_or_log_in(user_name)
+        puts `clear`
         puts "Welcome #{user_name}! What would you like to do?"
 
         is_running = true
@@ -12,13 +14,14 @@
             puts "1. View roster"
             puts "2. Catch pokemon"
             puts "3. Exit"
-            puts
             input = STDIN.gets.chomp.to_i
             if input == 1
-                puts "Here are all your pokemon"
+                puts `clear`
+                puts "Here are all your pokemon:"
                 user.view_roster
                 interacting_with_pokemon = true
                 while interacting_with_pokemon == true
+                    puts 
                     puts "What would you like to do?" 
                     puts "1. Rename pokemon"
                     puts "2. Release pokemon"
@@ -33,23 +36,26 @@
                         
                     elsif input_2 == 4
                         interacting_with_pokemon = false 
+                        puts `clear`
                     else 
                         puts "Try again."
                     end
                 end
             elsif input == 2
-                pokemon = user.encounter_random_pokemon
-                puts "A wild #{pokemon.name} appeared!"
+                random_pokemon = user.encounter_random_pokemon
+                puts "A wild #{random_pokemon.name} appeared!"
 
-                user.capture_pokemon(pokemon)
-                puts "Congratulations! You have caught #{pokemon.name}"
-                puts "#{pokemon.name} has been added to your roster."
+                user.capture_pokemon(random_pokemon)
+                puts "Congratulations! You have caught #{random_pokemon.name}"
+                puts "#{random_pokemon.name} has been added to your roster."
                 
 
             elsif input == 3
                 is_running = false
+                puts `clear`
                 puts "Thanks for playing!"
             else
+                puts `clear`
                 puts "Try again"
             end
         end
