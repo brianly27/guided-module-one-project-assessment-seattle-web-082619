@@ -104,10 +104,25 @@ class Game
         pika_left.close
     end
 
+    
     def self.clear_and_banner
         
     end
 end
+
+# today's goals:
+#     - code to create files in lib of all pokemon ascii art
+#         - lib
+#             -ascii
+#                 -pokemon
+#                     - 1. center position #with road
+#                     - 2. up #with road-offset
+#         -save original file as text
+#         -create an array of objects
+#         -write each object to a file
+#     -clean up code
+
+
 # tomorrow's goals:
 # release pokemon
 # delete user?
