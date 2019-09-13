@@ -36,6 +36,7 @@ class Game
                     elsif input_2 == 2
                         user.release_pokemon
                     elsif input_2 == 3
+                        user.workout_pokemon
                         
                     elsif input_2 == 4
                         interacting_with_pokemon = false 
@@ -84,11 +85,11 @@ class Game
             puts `clear`
             Game.banner
             Game.dance_left
-            sleep 1
+            sleep 0.75
             puts `clear`
             Game.banner
             Game.dance_right 
-            sleep 1
+            sleep 0.75
         end
     end
 

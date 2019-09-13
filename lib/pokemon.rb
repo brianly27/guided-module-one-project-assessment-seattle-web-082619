@@ -13,4 +13,13 @@ class Pokemon < ActiveRecord::Base
         puts art.read
         art.close
     end
+
+    def workout(road_number)
+        Game.banner
+        art = File.open("./lib/ascii/workout_art/road_#{road_number}/#{self.name}.txt")
+        puts art.read
+        art.close
+    end
+
+
 end

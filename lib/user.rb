@@ -84,6 +84,7 @@ class User < ActiveRecord::Base
         @release_pokemon = self.select_roster[release_input-1]
         self.select_roster.destroy(self.select_roster[release_input-1])
     end
+
     def release_message(message)
         puts `clear`
         Game.banner
@@ -93,6 +94,68 @@ class User < ActiveRecord::Base
         STDIN.getc
         puts "                                                   \r"
     end
+    
+    def workout_pokemon
+        working = true
+        while working == true
+            puts `clear`
+            Game.banner
+            puts "Which pokemon would you like to take a jog with?"
+            puts "Type in it's position in the roster and press enter"
+            puts 
+            self.view_roster
+            puts "#{self.select_roster.length+1}. Go back."
+            workout_input = STDIN.gets.chomp.to_i
+            if workout_input.between?(1,(self.select_roster.length))
+                puts `clear`
+                Game.banner
+                workout_partner = self.select_roster[workout_input-1].pokemon
+                workout_partner.workout(1)
+                sleep 0.75
+                puts `clear`
+                Game.banner
+                workout_partner.workout(2)
+                sleep 0.75
+                puts `clear`
+                Game.banner
+                workout_partner.workout(3)
+                sleep 0.75
+                puts `clear`
+                Game.banner
+                workout_partner.workout(4)
+                sleep 0.75
+                puts `clear`
+                Game.banner
+                workout_partner.workout(5)
+                sleep 0.75
+                puts `clear`
+                Game.banner
+                workout_partner.workout(6)
+                sleep 0.75
+                puts "You and your pokemon feel stronger already!"
+                puts "Say something to your pokemon:"
+                workout_message = STDIN.gets.chomp
+                self.postworkout_message(workout_message)
+            elsif workout_input == (self.select_roster.length + 1)
+                puts `clear`
+                working = false
+            else
+                puts "Try again"
+            end
+        end
+    end
+
+
+    def postworkout_message(message)
+        puts `clear`
+        Game.banner
+        puts "You say to your pokemon: #{message}"
+        puts "Press any key to continue.."
+        STDIN.getc
+        puts "                                                   \r"
+    end
+
 
 
 end
+

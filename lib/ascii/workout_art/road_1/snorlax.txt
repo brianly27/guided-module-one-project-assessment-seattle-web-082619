@@ -1,0 +1,55 @@
+
+
+
+    ::                                              
+    HHH:                   :HH                      
+    HHHHH:               :HHHH                      
+    HHHHHH: :HHHHHHHHH: :HHHHH                      
+    HHHHHHHHHHHHHHHHHHH:HHHHHH                      
+    :HHHHHHHHHHHHHHHHHHHHHHHHH                      
+    ,HHHHHHHH:,,,,:HHHH:,,:HHH                      
+     HHHHHH:,      ,:H:    ,:H                      
+     HHHHH:,  :HH:  ,:  :H: ,:                      
+    :HHHH:,,:H             :H,:                     
+    HHHHH,,,,       :::       H                     
+    HHHH:,,,,      :::::      :,                    
+    HHHH,,,,,,    ,:::::,     ,:                    
+   ,HHHH,,,,,,,   H::,,:H     ,H,                   
+   :HHHH,,,,,,,,  H: ,, H    ,,HH:,:HHHH:,          
+   H:::HHHH:,,,,,:HHHHHHHHHHHH:HHHHHHHHHHH:         
+  ::HHHH:,:H:,:HH::,,         ,:HHH ,HHHHHH:        
+ :HHHHHHHH:, HH::,,             ,:H :HHHHHHH:       
+:HHHHHHHHHHHHH:,,,               ,:HH:,, HHHH:      
+HHHHHHHHHHHH:, :,                  :H,,  HHHHH      
+HHHHHHHHHHHHH: H,                   :H  :HHHHH:     
+HHHHHHHHHHHHHH:,                     :HHHHHHHHH     
+HHHHHHHHHHHHH,,,                      :HHHHHHHH     
+HHHHHHHHHHHH:,,,,                     ,:HHHHHH:     
+HHHHHHHHHHH:,,,,,,                    ,,HHH: HHH:   
+HHHHHHHHHH:,,,,,,:,                   ,,HHH, HH,H H:
+HHHHHHHHHH,,:,,,H H,                 ,,:HH:,,:, H:,H
+HHHHHHHHH:,: :,:   :,,H:            ,,,H::::H :H:, H
+HHHHHHHHH,,H  HH,  H:H,H,,        ,,,,:H::,,     : :
+HHHHHHHHH,:,  ::,, :H, H,,,,,,,,,,,,,,H::,,      ,: 
+HHHHHHHHHHH,,:,,:H:,:, :,,,,,,,,,,,,,:H:,,,       H 
+HHHHHHHHH:,:H,      ,:H,,,,,,,,,,,,,:H::,,        : 
+HHHHHHHHH,,,,         ,:,,,,,,,,:HHHHH:,,,   ,:,  ,:
+HHHHHHHHH,,,           H,,,:HHHHHHHHHH:,,   ,:::,  H
+HHHHHHHH:,,,   ,:::,   :::HHHHHHHHHHHH:,,   :::::  H
+HHHHHHHH,,,    :::::,  ,HHHHHHHHHHHHHH:,,   :::::  H
+HHHHHHHH,,,   ,::::::   HHHHHHHHHHHHHH:,,   ::::, ,:
+HHHHHHHH,,,   :::::::   HHHHHHHHHHHHHH:,,   ,::,  : 
+HHHHHHHH,,,   :::::::   HHHHHHHHHHHHHH:,,    ,,   H 
+HHHHHHHH,,,   :::::::   HHHHHHHHHHHHHH:,,,       ,: 
+HHHHHHHH,,,   ::::::,   HHHHHHHHHHHHHHH:,,      ,:  
+HHHHHHHH,,,   ,:::::   ,HHHHHHHHHHHHHHH:,,,,  ,,H   
+:HHHHHHH,,,    ,:::,   :HHHHHHHHHHHHHHHH:,,,,,H:    
+ :HHHHHH:,,,    ,:,   ,HHHHHHHHHHHHHHHHHHHHHH:      
+  :HHHHHH,,,          :HHHHHHHHHHHHHHHHHH:,         
+   :HHHHH:,,,        ,HHHHHHHHH:,                   
+    :HHHHH:,,,      ,:HHHHHH:,                      
+      H:HHH:,,,    ,:HH:,                           
+            :HHHHHH:
+____        ____        ____        ____        ____        ____        
+    ____        ____        ____        ____        ____        ____    
+        ____        ____        ____        ____        ____        ____
