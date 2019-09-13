@@ -12,7 +12,7 @@ class Game
         puts "Welcome #{user_name}! What would you like to do?"
         is_running = true
         while is_running == true
-            puts "1. View roster"
+            puts "1. Interact with your Pokemon"
             puts "2. Catch pokemon"
             puts "3. Exit"
             input = STDIN.gets.chomp.to_i

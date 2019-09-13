@@ -22,9 +22,9 @@ class PokemonAPI
     def self.fill_pokemon_table #iterate on limit/offset
         offset = 0
         count = self.count
-        while @pokemon_count - offset > 0
-            url_with_offset = @pokemon_api + "?limit=20&offset=#{offset}"
-        
+        while 100 - offset >= 0 #@pokemon_count - offeset for full list
+            url_with_offset = @pokemon_api + "?limit=50&offset=#{offset}"
+            #change limit= and set= in line above
             response_string = RestClient.get(url_with_offset)
             json_hash = JSON.parse(response_string)
             #returns "name" and "url"= "https://pokeapi.co/api/v2/pokemon/1/"
@@ -35,7 +35,7 @@ class PokemonAPI
                 pokemon_num = pokemon_arr[0].to_i
                 Pokemon.create(name: "#{name}", pokemon_number: "#{pokemon_num}") 
             end
-            offset += 20
+            offset += 50
         end
     end
 end

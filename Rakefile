@@ -7,3 +7,7 @@ task :console do
   Pry.start
 end
 
+desc 'start pokemon game'
+task :game do 
+  Game.new.run
+end

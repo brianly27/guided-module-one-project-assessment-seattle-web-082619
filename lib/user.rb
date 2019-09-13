@@ -90,7 +90,7 @@ class User < ActiveRecord::Base
         Game.banner
         puts "You say to your pokemon: #{message}"
         puts "You release #{@release_pokemon.pokemon.name} into the wild."
-        puts "Press any key to continue.."
+        puts "Press enter to continue.."
         STDIN.getc
         puts "                                                   \r"
     end
@@ -107,30 +107,36 @@ class User < ActiveRecord::Base
             puts "#{self.select_roster.length+1}. Go back."
             workout_input = STDIN.gets.chomp.to_i
             if workout_input.between?(1,(self.select_roster.length))
-                puts `clear`
-                Game.banner
                 workout_partner = self.select_roster[workout_input-1].pokemon
+                2.times do   
+                    puts `clear`
+                     # Game.banner
+                    workout_partner.workout(1)
+                    sleep 0.75
+                    puts `clear`
+                    # Game.banner
+                    workout_partner.workout(2)
+                    sleep 0.75
+                    puts `clear`
+                    # Game.banner
+                    workout_partner.workout(3)
+                    sleep 0.75
+                    puts `clear`
+                    # Game.banner
+                    workout_partner.workout(4)
+                    sleep 0.75
+                    puts `clear`
+                    # Game.banner
+                    workout_partner.workout(5)
+                    sleep 0.75
+                    puts `clear`
+                    # Game.banner
+                    workout_partner.workout(6)
+                    sleep 0.75
+                end
+                puts `clear`
+                # Game.banner
                 workout_partner.workout(1)
-                sleep 0.75
-                puts `clear`
-                Game.banner
-                workout_partner.workout(2)
-                sleep 0.75
-                puts `clear`
-                Game.banner
-                workout_partner.workout(3)
-                sleep 0.75
-                puts `clear`
-                Game.banner
-                workout_partner.workout(4)
-                sleep 0.75
-                puts `clear`
-                Game.banner
-                workout_partner.workout(5)
-                sleep 0.75
-                puts `clear`
-                Game.banner
-                workout_partner.workout(6)
                 sleep 0.75
                 puts "You and your pokemon feel stronger already!"
                 puts "Say something to your pokemon:"
@@ -150,7 +156,7 @@ class User < ActiveRecord::Base
         puts `clear`
         Game.banner
         puts "You say to your pokemon: #{message}"
-        puts "Press any key to continue.."
+        puts "Press enter to continue.."
         STDIN.getc
         puts "                                                   \r"
     end
