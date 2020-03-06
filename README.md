@@ -1,7 +1,6 @@
-Module One Final Project - Pokemon CLI
+Pokemon CLI
 ========================
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
 
 This is the first command line app I have designed and created. Users can log in and catch pokemon. Users can interact with their pokemon in various ways CRUD data in the database:
   - users can log in again and view their saved pokemon (READ)
@@ -25,6 +24,7 @@ This is the first command line app I have designed and created. Users can log in
 
 ## How to play
 
+  - https://github.com/brianly27/guided-module-one-project-assessment-seattle-web-082619
   - The game can be started by executing 'rake game' into the terminal
   - Enter your name and press enter
   - Enter commands to catch or interact with your pokemon
